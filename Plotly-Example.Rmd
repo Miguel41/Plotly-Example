@@ -1,0 +1,35 @@
+---
+title: "Plotly-Example"
+author: "Miguel Ortiz"
+date: "September 07th, 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+library(plotly)
+```
+
+## Leaflet
+
+This is a presentation to show the graph generated for this assignment.
+
+- It shows an example of a radar filter detection matrix.
+- We can show the detection of a plane in contrast with the background.
+
+## Map
+
+```{r cars, echo = FALSE, comment=FALSE}
+radarbase <- matrix(rnorm(100*100), nrow = 100, ncol = 100)
+radarbase[25,30] <- radarbase[25,30] + 20.5
+radarbase[25,31] <- radarbase[25,31] + 20.3
+radarbase[25,32] <- radarbase[25,32] + 20.2
+radarbase[25,33] <- radarbase[25,33] + 20.2
+radarbase[25,34] <- radarbase[25,34] + 20.2
+radarbase[25,35] <- radarbase[25,35] + 20.1
+radarbase[25,36] <- radarbase[25,36] + 20.0
+
+plot_ly(z = ~radarbase, type = "heatmap")
+```
+
